@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Use-Case Decision Helper</title>
+  <meta name="description" content="A lightweight browser-based helper for assessing AI use cases across data classification, platform suitability, impact and controls." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">AI GOVERNANCE PROJECT · v0.1</p>
+      <h1>AI Use-Case Decision Helper</h1>
+      <p class="intro">
+        A lightweight browser-based tool for turning a proposed AI use case into a deliberate,
+        documented decision.
+      </p>
+      <p class="byline">By Rakesh Randeria</p>
+    </header>
+
+    <section class="card">
+      <form id="assessmentForm">
+        <div class="field">
+          <label for="useCase">1. Use case</label>
+          <textarea id="useCase" rows="3" placeholder="What are you trying to achieve?" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="dataClass">2. Data classification</label>
+          <select id="dataClass" required>
+            <option value="">Select one</option>
+            <option value="public">Public</option>
+            <option value="internal">Internal</option>
+            <option value="confidential">Confidential</option>
+            <option value="restricted">Restricted / regulated</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="platform">3. AI platform</label>
+          <select id="platform" required>
+            <option value="">Select one</option>
+            <option value="approved">Enterprise-approved / vetted platform</option>
+            <option value="public">Public / unmanaged AI service</option>
+            <option value="unknown">Platform not yet assessed</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="impact">4. Potential impact if the output is wrong</label>
+          <select id="impact" required>
+            <option value="">Select one</option>
+            <option value="low">Low — easy to verify, low consequence</option>
+            <option value="medium">Medium — business impact possible</option>
+            <option value="high">High — legal, financial, safety, customer or regulatory impact</option>
+          </select>
+        </div>
+
+        <fieldset class="field">
+          <legend>5. Controls</legend>
+          <label class="check"><input type="checkbox" id="humanReview"> Human review before use</label>
+          <label class="check"><input type="checkbox" id="dataMin"> Data minimised / de-identified where possible</label>
+          <label class="check"><input type="checkbox" id="approvedPolicy"> Use aligns with organisational AI / acceptable-use policy</label>
+          <label class="check"><input type="checkbox" id="outputCheck"> Important outputs will be independently verified</label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Assess use case</button>
+          <button type="button" class="secondary" id="resetBtn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="card result hidden" aria-live="polite">
+      <p class="eyebrow">DECISION</p>
+      <h2 id="decisionTitle"></h2>
+      <p id="decisionSummary"></p>
+
+      <div class="result-grid">
+        <div>
+          <h3>Why</h3>
+          <ul id="reasons"></ul>
+        </div>
+        <div>
+          <h3>Next actions</h3>
+          <ul id="actionsList"></ul>
+        </div>
+      </div>
+
+      <button type="button" class="secondary" id="copyBtn">Copy assessment summary</button>
+    </section>
+
+    <section class="card note">
+      <h2>How the helper works</h2>
+      <p>
+        The tool follows a simple decision path:
+        <strong>Use Case → Data Classification → Platform → Impact → Controls → Decision → Review.</strong>
+      </p>
+      <p>
+        It is intended as a practical conversation starter, not a substitute for legal, privacy,
+        security, risk or compliance review.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

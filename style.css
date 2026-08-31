@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --border: #dfe4ec;
+  --accent: #243b6b;
+  --accent-soft: #eaf0fb;
+  --success: #176b43;
+  --warn: #8a5a00;
+  --danger: #a32a2a;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.shell {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.hero {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  margin: 8px 0 14px;
+}
+
+h2, h3 {
+  line-height: 1.2;
+}
+
+.intro {
+  font-size: 1.15rem;
+  max-width: 720px;
+  color: var(--muted);
+}
+
+.byline {
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  margin: 22px 0;
+  box-shadow: 0 8px 26px rgba(28, 39, 60, 0.05);
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  color: inherit;
+  background: #fff;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.check {
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.check input {
+  margin-right: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+}
+
+button.secondary {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.result {
+  border-left: 5px solid var(--accent);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+.note {
+  background: #fbfcff;
+}
+
+.status-proceed { color: var(--success); }
+.status-controls { color: var(--warn); }
+.status-assess { color: var(--warn); }
+.status-stop { color: var(--danger); }
+
+@media (max-width: 700px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
+  }
+}
