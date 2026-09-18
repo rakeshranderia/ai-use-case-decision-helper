@@ -32,6 +32,7 @@ The helper returns one of four outcomes:
 - No backend
 - No external libraries
 - No data is transmitted anywhere
+- MIT licensed for reuse and adaptation
 
 ## Running locally
 
