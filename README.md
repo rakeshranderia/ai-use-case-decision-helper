@@ -1,5 +1,8 @@
 # AI Use-Case Decision Helper
 
+> **Status:** Maintained tool  
+> **Last reviewed:** October 2026
+
 A lightweight browser-based project that turns a proposed AI use case into a simple, documented decision.
 
 The project follows:
